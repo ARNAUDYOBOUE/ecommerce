@@ -1,5 +1,5 @@
-// tailwind.config.js
-module.exports = {
+/** @type {import('tailwindcss').Config} */
+export default {
     content: [
       "./src/**/*.{js,jsx,ts,tsx}",
     ],
@@ -55,11 +55,7 @@ module.exports = {
         },
       },
     },
-    plugins: [
-      require('@tailwindcss/forms'),
-      require('@tailwindcss/typography'),
-      require('@tailwindcss/aspect-ratio'),
-    ],
+    plugins: [],
   }
   
   // Pour utiliser ces plugins, installez-les avec:

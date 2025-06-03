@@ -9,13 +9,15 @@ import '../styles/Home.css';
 const { Title, Text, Paragraph } = Typography;
 const { Meta } = Card;
 
-// Utilitaire pour les URLs d'images avec URL directe
+// Utilitaire pour les URLs d'images
 const getImageUrl = (imagePath: string | undefined): string => {
   if (!imagePath) return '/images/placeholder-product.jpg';
-  if (imagePath.startsWith('http')) return imagePath;
+  // Si le backend renvoie déjà un chemin complet (ex: https://...)
+  if (imagePath.startsWith('http://') || imagePath.startsWith('https://')) return imagePath;
   
-  // Utiliser l'URL complète du serveur backend
-  return `https://ecommerce-backend-2-12tl.onrender.com${imagePath}`;
+  // Sinon, utiliser le chemin relatif pour les fichiers statiques servis par le backend
+  // Le backend sert les uploads sous /uploads
+  return `/uploads/${imagePath}`;
 };
 
 const Home: React.FC = () => {

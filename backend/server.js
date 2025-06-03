@@ -40,7 +40,8 @@ const allowedOrigins = [
   'http://localhost:3000',
   'http://localhost:5173',
   'http://localhost:5174',
-  'http://localhost:4200'
+  'http://localhost:4200',
+  'https://ecommerce-frontend-2-12tl.onrender.com'
 ];
 
 app.use(cors({
