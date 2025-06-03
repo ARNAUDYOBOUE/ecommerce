@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
   Form,
@@ -23,10 +23,28 @@ const AddProductPage = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
 
-  const onFinish = async (values) => {
+  const onFinish = async (values: { name: any; description: any; price: any; stock: any; category: any; brand: any; weight: any; dimensions: any; specifications: any[]; longDescription: any; isNew: any; isPromo: any; oldPrice: any; image: { originFileObj: File | undefined; }[]; additionalImages: any[]; }) => {
     try {
       setLoading(true);
-      const productData = {
+      const productData: {
+        name: any;
+        description: any;
+        price: any;
+        stock: any;
+        category: any;
+        brand: any;
+        weight: any;
+        dimensions: any;
+        specifications: any;
+        longDescription: any;
+        isNew: any;
+        isPromo: any;
+        oldPrice: any;
+        rating: number;
+        reviewCount: number;
+        image?: File;
+        additionalImages?: File[];
+      } = {
         name: values.name,
         description: values.description,
         price: values.price,
@@ -119,7 +137,7 @@ const AddProductPage = () => {
             <InputNumber
               min={0}
               formatter={(value) => `${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
-              parser={(value) => value.replace(/\$\s?|(,*)/g, '')}
+              parser={(value) => (value ? value.replace(/\$\s?|(,*)/g, '') : '')}
               className="w-full"
             />
           </Form.Item>
@@ -267,7 +285,7 @@ const AddProductPage = () => {
                   <InputNumber
                     min={0}
                     formatter={(value) => `${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
-                    parser={(value) => value.replace(/\$\s?|(,*)/g, '')}
+                    parser={(value) => value ? value.replace(/\$\s?|(,*)/g, '') : ''}
                     className="w-full"
                   />
                 </Form.Item>

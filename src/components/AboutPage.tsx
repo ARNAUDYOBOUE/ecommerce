@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { Card } from 'antd';
 import { InfoCircleOutlined, TeamOutlined, TrophyOutlined } from '@ant-design/icons';
 import '../styles/About.css';

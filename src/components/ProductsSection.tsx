@@ -1,5 +1,5 @@
 // ProductsSection.jsx 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Card, Tag, Spin, Pagination, Input, Button } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import { SearchOutlined } from '@ant-design/icons';
@@ -70,7 +70,7 @@ const ProductsSection: React.FC<ProductsSectionProps> = ({
   });
 
   // Récupérer toutes les catégories uniques
-  const categories = [...new Set(products.map(product => product.category))];
+    const categories = [...new Set(products.map(product => product.category).filter((c): c is string => typeof c === 'string'))];
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
