@@ -108,7 +108,7 @@ const Home: React.FC = () => {
                     <div className="product-image-container">
                       <img 
                         alt={product.name} 
-                        src={getImageUrl(product.image)} 
+                        src={`https://ecommerce-backend-2-12tl.onrender.com${product.image}`}
                         className="product-image"
                       />
                       {product.isNew && <div className="product-badge new">Nouveau</div>}

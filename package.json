@@ -5,9 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "lint": "eslint .",
-    "preview": "vite preview",
-    "build": "vite build"
+    "build": "vite build",
+    "start": "vite preview",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
   },
   "dependencies": {
     "@ant-design/icons": "^5.0.0",
@@ -15,6 +16,7 @@
     "@stripe/stripe-js": "^1.54.0",
     "antd": "^5.0.0",
     "axios": "^1.4.0",
+    "cors": "^2.8.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.10.0",
