@@ -1,7 +1,7 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const morgan = require('morgan');
-const cors = require('cors');
+// const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const path = require('path');
 const connectDB = require('./src/config/db');
@@ -17,6 +17,10 @@ connectDB();
 // Routes
 const authRoutes = require('./src/routes/authRoutes');
 const productRoutes = require('./src/routes/productRoutes');
+const orderRoutes = require('./src/routes/orderRoutes');
+import cors from 'cors';
+
+
 
 const app = express();
 
@@ -41,6 +45,7 @@ const allowedOrigins = [
   'http://localhost:5173',
   'http://localhost:5174',
   'http://localhost:4200',
+  'http://localhost:5179',
   'https://ecommerce-frontend-2-12tl.onrender.com'
 ];
 
@@ -58,6 +63,7 @@ app.use(cors({
 // Monter les routes
 app.use('/api/auth', authRoutes);
 app.use('/api/products', productRoutes);
+app.use('/api/orders', orderRoutes);
 
 // Middleware de gestion d'erreurs
 app.use(errorHandler);
