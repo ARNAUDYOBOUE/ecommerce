@@ -23,7 +23,7 @@ const AddProductPage = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
 
-  const onFinish = async (values: { name: any; description: any; price: any; stock: any; category: any; brand: any; weight: any; dimensions: any; specifications: any[]; longDescription: any; isNew: any; isPromo: any; oldPrice: any; image: { originFileObj: File | undefined; }[]; additionalImages: any[]; }) => {
+  const onFinish = async (values: { name: any; description: any; price: any; stock: any; category: any; brand: any; weight: any; dimensions: any; specifications: any[]; longDescription: any; isNew: any; isPromo: any; oldPrice: any; image: { originFileObj: File | any; }[]; additionalImages: any[]; }) => {
     try {
       setLoading(true);
       const productData: {

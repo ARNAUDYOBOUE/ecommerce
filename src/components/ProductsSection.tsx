@@ -32,7 +32,7 @@ const ProductsSection: React.FC<ProductsSectionProps> = ({
   const getImageUrl = (imagePath: string | undefined): string => {
     if (!imagePath) return '/placeholder.png';
     if (imagePath.startsWith('http')) return imagePath;
-    return `https://ecommerce-backend-2-12tl.onrender.com/${imagePath}`;
+    return `https://ecommerce-backend-2-12tl.onrender.com${imagePath}`;
   };
 
   useEffect(() => {

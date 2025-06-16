@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Button, Form, Input, InputNumber, Upload, message } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
-import { addProduct } from '../../services/productService';
+import { Product } from '../../services/productService';
 
 const AddProduct: React.FC = () => {
   const [loading, setLoading] = useState(false);
@@ -10,7 +10,7 @@ const AddProduct: React.FC = () => {
   const onFinish = async (values: any) => {
     try {
       setLoading(true);
-      await addProduct(values);
+      await AddProduct(values);
       message.success('Produit ajouté avec succès!');
     } catch (error) {
       message.error('Erreur lors de l\'ajout du produit');

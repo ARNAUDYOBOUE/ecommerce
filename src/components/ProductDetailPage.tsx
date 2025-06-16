@@ -79,7 +79,8 @@ const ProductDetailPage: React.FC = () => {
           <div className="sticky top-4">
             <div className="mb-4">
               <Image
-                src={selectedImage}
+                //src={selectedImage}
+                src={`https://ecommerce-backend-2-12tl.onrender.com${selectedImage}`}
                 alt={product.name}
                 className="w-full h-auto rounded-lg"
                 preview={false}
@@ -92,7 +93,8 @@ const ProductDetailPage: React.FC = () => {
                   onClick={() => setSelectedImage(product.image)}
                 >
                   <Image
-                    src={product.image}
+                    // src={product.image}
+                    src={`https://ecommerce-backend-2-12tl.onrender.com${product.image}`}
                     alt={product.name}
                     className="w-full h-20 object-cover rounded"
                     preview={false}
@@ -105,7 +107,8 @@ const ProductDetailPage: React.FC = () => {
                     onClick={() => setSelectedImage(image)}
                   >
                     <Image
-                      src={image}
+                      //src={image}
+                      src={`https://ecommerce-backend-2-12tl.onrender.com${image}`}
                       alt={`${product.name} - Image ${index + 2}`}
                       className="w-full h-20 object-cover rounded"
                       preview={false}

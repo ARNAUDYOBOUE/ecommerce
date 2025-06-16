@@ -77,12 +77,12 @@ exports.createProduct = [
       const product = new Product({
         name,
         description,
-        price,
-        oldPrice: oldPrice || undefined,
+        price: Number(price),
+        oldPrice: oldPrice ? Number(oldPrice) : undefined,
         category,
         image: `/uploads/${req.file.filename}`,
-        rating: rating || 0,
-        stock,
+        rating: rating ? Number(rating) : 0,
+        stock: Number(stock),
         isNew: isNew === 'true',
         isPromo: isPromo === 'true'
       });

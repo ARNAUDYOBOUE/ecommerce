@@ -26,20 +26,27 @@ export const createProduct = async (productData) => {
     
     // Ajouter les champs texte
     Object.entries(productData).forEach(([key, value]) => {
-      if (value !== undefined && key !== 'image' && key !== 'additionalImages') {
+      console.log(`Processing key: ${key}, value: ${value}, type: ${typeof value}`);
+      if (value !== null && value !== undefined && key !== 'image' && key !== 'additionalImages') {
         formData.append(key, value.toString());
+      } else if (value === null || value === undefined) {
+        console.warn(`Skipping null/undefined value for key: ${key}`);
       }
     });
 
     // Ajouter l'image principale si elle existe
     if (productData.image) {
       formData.append('image', productData.image);
+    } else {
+      console.warn('No image found in productData');
     }
 
     // Ajouter les images supplémentaires si elles existent
-    if (productData.additionalImages) {
+    if (productData.additionalImages && Array.isArray(productData.additionalImages)) {
       productData.additionalImages.forEach((image) => {
-        formData.append('additionalImages', image);
+        if (image) {
+          formData.append('additionalImages', image);
+        }
       });
     }
 

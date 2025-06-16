@@ -27,6 +27,8 @@ const app = express();
 // Middleware pour traiter les données JSON et les fichiers
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
+// Permet d'accéder aux fichiers du dossier "uploads"
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 // Cookie parser
 app.use(cookieParser());
