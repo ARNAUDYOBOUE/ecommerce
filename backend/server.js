@@ -47,8 +47,11 @@ const allowedOrigins = [
   'http://localhost:5173',
   'http://localhost:5174',
   'http://localhost:4200',
-  'http://localhost:5179',
-  'https://ecommerce-frontend-2-12tl.onrender.com'
+  'https://comerc.vercel.app',
+  'https://ecommerce-backend-2-12tl.onrender.com',
+  'https://comerc-eight.vercel.app/',
+  'https://comerc-git-main-arnauds-projects-c102a41a.vercel.app',
+  'https://comerc.vercel.app' // ← au cas où ton domaine final est celui-là
 ];
 
 app.use(cors({
